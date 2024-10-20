@@ -27,21 +27,21 @@ class City {
 }
 // HistoryService class
 class HistoryService {
-  // Read method that reads from the searchHistory.json file
+  // Read method that reads from the db.json file
   private async read() {
-    return await fs.readFile('db/searchHistory.json', {
+    return await fs.readFile('db/db.json', {
       flag: 'r',
       encoding: 'utf8',
     });
   }
-  // Write method that writes the updated cities array to the searchHistory.json file
+  // Write method that writes the updated cities array to the db.json file
   private async write(cities: City[]) {
     return await fs.writeFile(
-      'db/searchHistory.json',
+      'db/db.json',
       JSON.stringify(cities, null, '\t')
     );
   }
-  // getCities method that reads the cities from the searchHistory.json file uand returns them as an array of City objects
+  // getCities method that reads the cities from the db.json file uand returns them as an array of City objects
   async getCities() {
     return await this.read().then((citiesJson) => {
       let parsedCities: City[];
@@ -58,7 +58,7 @@ class HistoryService {
       return parsedCities; // return the parsed cities
     });
   }
-  // addCity method that adds a city to the searchHistory.json file
+  // addCity method that adds a city to the db.json file
   async addCity(city: string, weather: any) {
     if (!city) {
       throw new Error('City can not be blank');
@@ -96,7 +96,7 @@ class HistoryService {
       return existingCity;
   } }
 
-  // removeCity method that removes a city from the searchHistory.json file
+  // removeCity method that removes a city from the db.json file
   async removeCity(id: string) {
     return await this.getCities().then((cities: City[]): City[] => { // get parsed cities array
       return cities.filter(city => city.id !== id); // filter out passed id
