@@ -15,6 +15,7 @@ ForecastFlex is a dynamic weather forecasting app that provides real-time, accur
   - [Usage](#usage)
   - [Tests](#tests)
   - [License](#license)
+  - [Directory Structures](#directory-structures)
   - [Contributing](#contributing)
 
 
@@ -35,6 +36,11 @@ N/A
 ## License
 
 This project is licensed under the MIT License.
+
+
+## Directory Structures
+![alt text](image-2.png)
+
 
 ## Contributing
 

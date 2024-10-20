@@ -1,3 +1,4 @@
+
 forecastflex/
 │
 ├── client/                 # Frontend
@@ -8,8 +9,10 @@ forecastflex/
 |
 ├── server/                 # Backend (Express)
 │
-│   ├── db/                 # database
+│   ├── db/                 
 │   ├── src/
 │       └── service/
 │       └── routes/
 │           └── api/
+
+
