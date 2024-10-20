@@ -10,6 +10,6 @@ forecastflex/
 │
 │   ├── db/                 # database
 │   ├── src/
+│       └── service/
 │       └── routes/
 │           └── api/
-│       └── service/
