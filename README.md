@@ -39,7 +39,7 @@ This project is licensed under the MIT License.
 
 
 ## Directory Structures
-![alt text](image-2.png)
+![alt text](assets/dir-stru.png)
 
 
 ## Contributing
