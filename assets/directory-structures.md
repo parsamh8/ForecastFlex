@@ -14,5 +14,7 @@ forecastflex/
 │       └── service/
 │       └── routes/
 │           └── api/
+|
+├── assets/  
 
 
