@@ -1,8 +1,12 @@
 # ForecastFlex
 
+ https://forecastflex.onrender.com 
+
   ![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)
+  
 
 ## Description
+
 ForecastFlex is a dynamic weather forecasting app that provides real-time, accurate weather updates with flexible and customizable features for users to track the weather condition based on a city and forecast for the next 5 days.
 
 
@@ -20,7 +24,9 @@ ForecastFlex is a dynamic weather forecasting app that provides real-time, accur
 
 
 ## Installation
+
 N/A
+
 
 ## Usage
 
@@ -28,9 +34,10 @@ The app allows users to search for weather information by entering a city name, 
 
 ![alt text](assets/ui.png)
 
+
 ## Tests
 
-N/A
+Application tested in Insomnia
 
 
 ## License
@@ -47,5 +54,4 @@ This project is licensed under the MIT License.
 Feel free to fork the repository and submit pull requests if you'd like to contribute!
 
 Buy me a coffee? ☕
-
 My contact info: parsamh8@gmail.com
