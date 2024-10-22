@@ -42,9 +42,9 @@ router.delete('/history/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params; // pull id off of http request 
     await historyService.removeCity(id); // remove city from JSON file via ID using historyService method
-    res.status(200).json({ message: 'City removed successfully' });
+    res.status(200).json({ message: 'City got removed successfully' });
   } catch (error) {
-    res.status(500).json({ message: 'Error removing city', error });
+    res.status(500).json({ message: 'Error removing city'});
   }
 });
 

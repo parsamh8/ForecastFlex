@@ -3,13 +3,13 @@ dotenv.config();
 
 // WeatherService class for required objects
 class Weather {
-  city: string;
-  date: string;
-  icon: string;
-  iconDescription: string;
-  tempF: string;
-  windSpeed: string;
-  humidity: string;
+  date;
+  city;
+  iconDescription;
+  icon;
+  windSpeed;
+  humidity;
+  tempF;
 
   constructor(
     city: string,
@@ -31,20 +31,20 @@ class Weather {
 
 // class for the WeatherService
 class WeatherService {
-  baseURL: string;
+  apiURL: string;
   private apiKey: string;
 
   constructor() {
-    this.baseURL = 'https://api.openweathermap.org'; //url and api key from .env file
+    this.apiURL = 'https://api.openweathermap.org'; //url and api key from .env file
     this.apiKey = 'b341347737a76f3242bd62ba81ec30da';
   }
 
   // Define a method to get weather data (either from file or API)
   async getWeatherForCity(city: string): Promise<Weather[]> {
     try {
-      const url = `${this.baseURL}/data/2.5/forecast?q=${city}&units=metric&appid=${this.apiKey}`;
+      const url = `${this.apiURL}/data/2.5/forecast?q=${city}&units=metric&appid=${this.apiKey}`;
       console.log(`Fetching weather for city: ${city}`);
-      console.log(`API URL: ${url}`);
+      console.log(`API URL is: ${url}`);
 
       const response = await fetch(url);
 
@@ -53,19 +53,19 @@ class WeatherService {
       }
 
       const data = await response.json();
-      console.log('Raw API data:', data);
+      console.log('The API data: is', data);
 
-      const weatherArray = this.parseCurrentWeather(data);
-      console.log('Parsed weather data:', weatherArray);
+      const weatherMatch = this.parseCurrentWeather(data);
+      console.log('Parsed weather data:', weatherMatch);
 
-      return weatherArray;
+      return weatherMatch;
     } catch (error) {
-      console.error('Error fetching weather data:', error);
+      console.error('Error fetching weather data');
       throw error;
     }
   }
 
-  // Parse the current weather data
+  // Convert to Parse the current weather data
   private parseCurrentWeather(data: any): Weather[] {
     if (!data?.list?.length) {
       throw new Error('Invalid weather data');
@@ -79,19 +79,19 @@ class WeatherService {
     const cityName = data.city.name;
     console.log('City Name:', cityName);
 
-    const weatherArray: Weather[] = dailyForecasts.map((forecastItem: any) => {
+    const weatherMatch: Weather[] = dailyForecasts.map((forecastItem: any) => {
       const date = new Date(forecastItem.dt * 1000).toLocaleDateString();
       const tempF = forecastItem.main.temp;
-      const icon = forecastItem.weather[0].icon;
       const iconDescription = forecastItem.weather[0].description;
+      const icon = forecastItem.weather[0].icon;
       const windSpeed = forecastItem.wind.speed;
       const humidity = forecastItem.main.humidity;
 
       return new Weather(cityName, date, icon, iconDescription, tempF, windSpeed, humidity);
     });
 
-    console.log('Generated weather array:', weatherArray);
-    return weatherArray;
+    console.log('Generated weather array:', weatherMatch);
+    return weatherMatch;
   }
 }
 

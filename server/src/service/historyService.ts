@@ -2,36 +2,42 @@ import fs from 'node:fs/promises'; // file system from node to read files
 import { v4 as uuidv4 } from 'uuid'; // uuid for unique id
 // City class with name and id properties
 class City {
-  name: string;
-  id: string;
-  weather: Array<{ // weather object to retrieve from history without recalling api
-    name: string; 
-    temperature: string;
-    date: string;
-    icon: string;
-    iconDescription: string;
-    tempF: string;
-    windSpeed: string;
-    humidity: string;
-  }> | null;
+  name;
+  id;
+  weather: null;
+  temperature;
+  date;
+  icon;
+  iconDescription;
+  tempF;
+  windSpeed;
+  humidity;
 
-  constructor(name: string, id: string, weather = null) {
+  constructor(name: string, id: string, weather = null, humidity: string, windspeed: string, tempF: string, iconDescription: string, icon: string, date: string, temperature: string) {
     this.name = name;
     this.id = id;
     this.weather = weather;
+    this.humidity = humidity;
+    this.windSpeed = windspeed;
+    this.tempF = tempF;
+    this.iconDescription = iconDescription;
+    this.icon = icon;
+    this.date = date;
+    this.temperature = temperature
   }
 }
 
 // HistoryService class
 class HistoryService {
-  // Read method that reads from the db.json file
-  private async read() {
-    return fs.promises.readFile('db/db.json', 'utf8');
+
+  async read() {
+    return fs.readFile('db/db.json', 'utf8');
   }
 
   // Write method that writes the updated cities array to the db.json file
-  private async write(cities: City[]) {
-    return fs.promises.writeFile('db/db.json', JSON.stringify(cities, null, 2));
+  async write(cities: City[]) {
+
+    return fs.writeFile('db/db.json', JSON.stringify(cities));
   }
 
   // getCities method that reads the cities from the db.json file and returns them as an array of City objects
@@ -57,7 +63,7 @@ class HistoryService {
       return existingCity;
     }
 
-    const newCity = new City(city, uuidv4(), weather);
+    const newCity = new City(city, uuidv4(), weather, 'unknown', '0', '0', 'unknown', 'unknown', new Date().toISOString(), '0');
     const updatedCities = [...citiesArray, newCity];
 
     await this.write(updatedCities);
@@ -65,7 +71,7 @@ class HistoryService {
     return newCity;
   }
 
-  // removeCity method that removes a city from the db.json file
+  // following method remove city from db.json file
   async removeCity(id: string): Promise<void> {
     const cities = await this.getCities();
     const filteredCities = cities.filter(city => city.id !== id);
