@@ -104,7 +104,7 @@ const renderForecast = (forecast: any): void => {
   const heading = document.createElement('h4');
 
   headingCol.setAttribute('class', 'col-12');
-  heading.textContent = '5-Day Forecast:';
+  heading.textContent = '4-Day Forecast:';
   headingCol.append(heading);
 
   if (forecastContainer) {

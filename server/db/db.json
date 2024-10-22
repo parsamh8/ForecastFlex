@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "name": "Toronto",
+    "id": "8edefb39-ebf6-4be4-9a0a-1e151b964ece",
+    "weather": [
+      {
+        "city": "Toronto",
+        "tempF": 16.12,
+        "date": "10/23/2024",
+        "icon": "04d",
+        "iconDescription": "broken clouds",
+        "windSpeed": 5.39,
+        "humidity": 61
+      },
+      {
+        "city": "Toronto",
+        "tempF": 7.23,
+        "date": "10/24/2024",
+        "icon": "03d",
+        "iconDescription": "scattered clouds",
+        "windSpeed": 2.78,
+        "humidity": 51
+      },
+      {
+        "city": "Toronto",
+        "tempF": 9.47,
+        "date": "10/25/2024",
+        "icon": "04d",
+        "iconDescription": "overcast clouds",
+        "windSpeed": 2.29,
+        "humidity": 53
+      },
+      {
+        "city": "Toronto",
+        "tempF": 9.32,
+        "date": "10/26/2024",
+        "icon": "03d",
+        "iconDescription": "scattered clouds",
+        "windSpeed": 4.89,
+        "humidity": 75
+      },
+      {
+        "city": "Toronto",
+        "tempF": 5.72,
+        "date": "10/27/2024",
+        "icon": "02d",
+        "iconDescription": "few clouds",
+        "windSpeed": 3.84,
+        "humidity": 56
+      }
+    ]
+  }
+]
