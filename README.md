@@ -7,7 +7,7 @@
 
 ## Description
 
-ForecastFlex is a dynamic weather forecasting app that provides real-time, accurate weather updates with flexible and customizable features for users to track the weather condition based on a city and forecast for the next 5 days.
+ForecastFlex is a dynamic weather forecasting app that provides real-time, accurate weather updates with flexible and customizable features for users to track the weather condition based on a city and forecast for the next 4 days.
 
 
 ## Table of Contents
@@ -30,14 +30,14 @@ N/A
 
 ## Usage
 
-The app allows users to search for weather information by entering a city name, which sends a request to the backend API. The backend processes the request and retrieves the weather data from an external API, returning it to the client for display. The app also stores your search history, which can be retrieved with a GET request to /api/weather/history, and individual entries can be deleted using a DELETE request. This setup allows users to view current weather AND forecast next 5 days, track their searches, and manage their search history easily.
+The app allows users to search for weather information by entering a city name, which sends a request to the backend API. The backend processes the request and retrieves the weather data from an external API, returning it to the client for display. The app also stores your search history, which can be retrieved with a GET request to /api/weather/history, and individual entries can be deleted using a DELETE request. This setup allows users to view current weather AND forecast next 4 days, track their searches, and manage their search history easily.
 
 ![alt text](assets/ui.png)
 
 
 ## Tests
 
-Application tested in Insomnia
+Application tested with Insomnia.
 
 
 ## License
